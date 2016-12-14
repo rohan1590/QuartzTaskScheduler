@@ -11,7 +11,7 @@ namespace QuartzTaskScheduler
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("task Scheduler Begins");
+            Console.WriteLine("Task Scheduler Begins");
 
             ISchedulerFactory schedFact = new StdSchedulerFactory();
 
@@ -27,12 +27,11 @@ namespace QuartzTaskScheduler
             // create trigger
             ITrigger trigger = TriggerBuilder.Create()
                 .WithIdentity("trigger1", "group1")
-                .WithSimpleSchedule(x => x.WithIntervalInSeconds(2).RepeatForever())
+                .WithSimpleSchedule(x => x.WithIntervalInSeconds(2).RepeatForever()) // Set repeat time interval here 
                 .Build();
 
             // Schedule the job using the job and trigger 
             sched.ScheduleJob(job, trigger);
-
 
             Console.ReadLine();
 
