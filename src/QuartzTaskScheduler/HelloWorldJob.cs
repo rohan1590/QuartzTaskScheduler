@@ -29,7 +29,6 @@ namespace QuartzTaskScheduler
         {
             try
             {
-               
                 Console.WriteLine("Executing : "+ DateTime.Now.ToString("HH:mm:ss"));
             }
             catch (NotImplementedException e)
